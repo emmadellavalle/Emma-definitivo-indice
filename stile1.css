@@ -1,0 +1,108 @@
+body {
+  margin: 0; 
+  font-family: 'Segoe UI', sans-serif; 
+  background: linear-gradient(135deg, #1e3c72, #2a5298); /* colore sfondo */
+  color: white; /* colore testo */
+  min-height: 100vh;
+  display: flex; /* flexbox per posizionare i contenuti */
+  justify-content: center; 
+  align-items: center;
+  text-align: center;
+}
+
+.container {
+  max-width: 800px; /* larghezza massima */
+  padding: 20px; /* spazio tra container e contenuto */
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 40px; /* spazio sotto titolo */
+  letter-spacing: 2px; /* spazio tra lettere */
+}
+
+.lesson-list { /* ul */
+  list-style: none; 
+  padding: 0;
+}
+
+.lesson-list li {
+  margin: 10px 0; /* distanza verticale tra lesson */
+}
+
+.lesson-list a { /* come appaiono link delle lezioni */
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: 2px solid white; 
+  border-radius: 12px; /* angoli arrotondati */
+  transition: 0.3s; /* animazione per hover */
+}
+
+.lesson-list a:hover { /* cosa succede quando passo sopra il cursore */
+  background: white;
+  color: #2a5298;
+}
+
+.lesson-page { /* layout lezioni */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
+.lesson-page h2 { /* titolo lezione */
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.btn { /* stile pulsanti "torna alla home", simile a link lezioni */
+  text-decoration: none;
+  background: white;
+  color: #2a5298;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #ffda77;
+  color: #2a5298;
+}
+
+.monogram { /* monogramma in basso a destra */
+    position: fixed; /* se scrollo rimane nello stesso punto */
+  bottom: 20px;
+  right: 20px;
+  width: 80px;
+}
+
+.site-header { /* Politecnico + anno + logo */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.site-header .header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-header .logo {
+  width: 200px;
+  height: auto;
+}
+
+.site-header span {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.lesson-list li {
+  margin: 35px 0;  /* più spazio tra le lezioni */
+}
