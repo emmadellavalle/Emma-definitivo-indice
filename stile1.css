@@ -1,7 +1,8 @@
 body {
   margin: 0; 
   font-family: 'Segoe UI', sans-serif; 
-  background: linear-gradient(135deg, #1e3c72, #2a5298); /* colore sfondo */
+  background: linear-gradient(135deg, #1e3c72, #2a5298); /* url(immagini/download.jpg) no-repeat center center fixed; colore sfondo */
+  /*background-size: cover;  riempie tutta finestra */
   color: white; /* colore testo */
   min-height: 100vh;
   display: block; 
@@ -15,26 +16,47 @@ body {
   margin-top: -30px;
 }
 
-h1 {
+h1 { 
   font-size: 2.5rem;
   margin-bottom: 40px; /* spazio sotto titolo */
   letter-spacing: 2px; /* spazio tra lettere */
+  text-transform: uppercase; /* tutto maiuscolo */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* ombra elegante */
 }
 
-.lesson-list { /* ul */
+.lesson-list { /* ul contenente lezioni */
   list-style: none; 
   padding: 0;
   margin: 0 auto;      /* centra orizzontalmente */
-  max-width: 400px;    /* larghezza massima */
-  text-align: center;  /* centra anche i link dentro */
+  max-width: 400px;    
+  text-align: center;  
 }
 
 .lesson-list li {
   margin: 15px 0; /* distanza verticale tra lesson */
-  padding: 5;
+  padding: 0; /* no padding interno */
+  opacity: 0; /* inizialmente invisibile */
+  transform: translateY(10px);
+  animation: fadeInUp 0.6s ease forwards;
 }
 
-.lesson-list a { /* come appaiono link delle lezioni */
+.lesson-list li:nth-child(1) { animation-delay: 0.1s; }
+.lesson-list li:nth-child(2) { animation-delay: 0.2s; }
+.lesson-list li:nth-child(3) { animation-delay: 0.3s; }
+.lesson-list li:nth-child(4) { animation-delay: 0.4s; }
+.lesson-list li:nth-child(5) { animation-delay: 0.5s; }
+.lesson-list li:nth-child(6) { animation-delay: 0.6s; }
+.lesson-list li:nth-child(7) { animation-delay: 0.7s; }
+.lesson-list li:nth-child(8) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lesson-list a { /* come appaiono link lezioni */
   text-decoration: none;
   color: white;
   font-weight: bold;
@@ -43,18 +65,21 @@ h1 {
   border-radius: 12px; /* angoli arrotondati */
   transition: 0.3s; /* animazione per hover */
   display: block;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.7); /* effetto rilievo */
 }
 
 .lesson-list a:hover { /* cosa succede quando passo sopra il cursore */
-  background: white;
+  background: linear-gradient(135deg, #ffffff, #aad4ff);
   color: #2a5298;
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(42, 82, 152, 0.5); /* leggero bagliore gradiente azzurro */
 }
 
 .lesson-page { /* layout lezioni */
-  display: flex;
-  flex-direction: column;
+  display: flex; /* flexbox per allineare elementi */
+  flex-direction: column; 
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-start; /* inizia dall'alto */
   padding-top: 100px; /* lascia spazio dall’header */
   min-height: 100vh;
 }
@@ -72,24 +97,33 @@ h1 {
   border-radius: 12px;
   font-weight: bold;
   transition: 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.7);
 }
 
-.btn:hover {
-  background: #ffda77;
+.btn:hover { /* hover su pulsanti */
+  background: linear-gradient(135deg, #ffffff, #ffffff);
   color: #2a5298;
+  transform: scale(1.05);
 }
 
-.monogram { /* monogramma in basso a destra */
+.monogram { /* monogramma fisso in basso a destra */
   position: fixed; /* se scrollo rimane nello stesso punto */
   bottom: 20px;
   right: 20px;
   width: 80px;
+  animation: pulseOnce 3s ease forwards; /* dura 3s e rimane nello stato finale */
 }
+
+@keyframes pulseOnce {
+  from { transform: scale(1); }   /* stato iniziale normale */
+  to { transform: scale(1.1); }  /* stato finale ingrandito */
+}
+
 
 .site-header { /* Politecnico + anno + logo */
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 10px; /* distanza tra elementi */
   color: white;
   font-family: 'Segoe UI', sans-serif;
   font-weight: bold;
@@ -97,15 +131,15 @@ h1 {
   justify-content: flex-start; /* resta a sinistra */
 }
 
-.site-header .header-left {
+.site-header .header-left { /* sezione sinisra header */
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 10px; /* distanza logo e testo */
 }
 
 .site-header .logo {
-  width: 140px;
-  height: auto;
+  width: 150px;
+  height: auto; /* proporzioni mantenute */
 }
 
 .site-header span {
