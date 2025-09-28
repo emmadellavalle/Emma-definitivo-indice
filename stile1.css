@@ -5,7 +5,7 @@ body {
   /*background-size: cover;  riempie tutta finestra */
   color: white; /* colore testo */
   min-height: 100vh;
-  display: block; 
+  display: block; /* default per body */
   text-align: center;
 }
 
@@ -13,7 +13,7 @@ body {
   max-width: 800px; /* larghezza massima */
   margin: 0 auto;
   padding: 20px; /* spazio tra container e contenuto */
-  margin-top: -30px;
+  margin-top: -40px;
 }
 
 h1 { 
@@ -21,23 +21,23 @@ h1 {
   margin-bottom: 40px; /* spazio sotto titolo */
   letter-spacing: 2px; /* spazio tra lettere */
   text-transform: uppercase; /* tutto maiuscolo */
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* ombra elegante */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* ombra testo */
 }
 
 .lesson-list { /* ul contenente lezioni */
   list-style: none; 
   padding: 0;
-  margin: 0 auto;      /* centra orizzontalmente */
+  margin: 0 auto; /* centra */
   max-width: 400px;    
-  text-align: center;  
+  text-align: center;  /* link centrato */
 }
 
 .lesson-list li {
   margin: 15px 0; /* distanza verticale tra lesson */
   padding: 0; /* no padding interno */
   opacity: 0; /* inizialmente invisibile */
-  transform: translateY(10px);
-  animation: fadeInUp 0.6s ease forwards;
+  transform: translateY(10px); /* spostamento verticale */
+  animation: fadeInUp 0.6s ease forwards; /* apparizione */
 }
 
 .lesson-list li:nth-child(1) { animation-delay: 0.1s; }
@@ -47,12 +47,12 @@ h1 {
 .lesson-list li:nth-child(5) { animation-delay: 0.5s; }
 .lesson-list li:nth-child(6) { animation-delay: 0.6s; }
 .lesson-list li:nth-child(7) { animation-delay: 0.7s; }
-.lesson-list li:nth-child(8) { animation-delay: 0.8s; }
+.lesson-list li:nth-child(8) { animation-delay: 0.8s; } /* ritarda animazione */
 
 @keyframes fadeInUp {
   to {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1; /* invisibile */
+    transform: translateY(0); /* posizione originale */
   }
 }
 
@@ -65,22 +65,22 @@ h1 {
   border-radius: 12px; /* angoli arrotondati */
   transition: 0.3s; /* animazione per hover */
   display: block;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.7); /* effetto rilievo */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.7); /* ombra */
 }
 
 .lesson-list a:hover { /* cosa succede quando passo sopra il cursore */
   background: linear-gradient(135deg, #ffffff, #aad4ff);
   color: #2a5298;
-  transform: scale(1.05);
-  box-shadow: 0 0 8px rgba(42, 82, 152, 0.5); /* leggero bagliore gradiente azzurro */
+  transform: scale(1.05); /* ingrandimento */
+  box-shadow: 0 0 8px rgba(42, 82, 152, 0.5); /* bagliore azzurro */
 }
 
 .lesson-page { /* layout lezioni */
-  display: flex; /* flexbox per allineare elementi */
+  display: flex; /* flexbox verticale */
   flex-direction: column; 
   align-items: center;
   justify-content: flex-start; /* inizia dall'alto */
-  padding-top: 100px; /* lascia spazio dall’header */
+  padding-top: 100px; /* spazio dall’header */
   min-height: 100vh;
 }
 
@@ -103,7 +103,7 @@ h1 {
 .btn:hover { /* hover su pulsanti */
   background: linear-gradient(135deg, #ffffff, #ffffff);
   color: #2a5298;
-  transform: scale(1.05);
+  transform: scale(1.05); /* ingrandimento */
 }
 
 .monogram { /* monogramma fisso in basso a destra */
@@ -115,7 +115,7 @@ h1 {
 }
 
 @keyframes pulseOnce {
-  from { transform: scale(1); }   /* stato iniziale normale */
+  from { transform: scale(1); }   /* stato iniziale */
   to { transform: scale(1.1); }  /* stato finale ingrandito */
 }
 
